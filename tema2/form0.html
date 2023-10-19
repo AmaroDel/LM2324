@@ -8,6 +8,8 @@
 <body>
     <h1>Registro de usuario</h1>
     <form action=""></form>
+    <fieldset>
+        <legend>Datos personales</legend>
     <label for="">Nombre</label><br>
     <input type="text" name="nombre"><br>
     <label for="">Apellido</label><br>
@@ -18,7 +20,7 @@
     <input type="date" name="nacimiento" id=""><br>
     <label for="">Foto de Perfil</label><br>
     <input type="file" name="" id=""><br>
-    <label for="">Sexo</label><br>
+    <label for="">Sexo:</label><br>
     
 
 
@@ -39,7 +41,7 @@
     <input type="password" name="password1" id=""><br>
     <label for="">Repite contraseña</label><br>
     <input type="password" name="password2" id=""><br>
-    <label for="">Intereses:</label><br>
+    <label for="">Intereses:</label>
     <input type="checkbox" name="viajes" id="">Viajes
     <input type="checkbox" name="leer" id="">Leer
     <input type="checkbox" name="deportes" id="">Deportes
@@ -47,10 +49,12 @@
     <input type="checkbox" name="fiesta" id="">Salir de fiesta<br>
 
     <label for="">Color preferido</label>
-    <input type="color" name="color">
+    <input type="color" name="color"><br>
+    <label for="">Describete a ti mismo</label><br>
+    <textarea maxlength="50" name="descripcion" id="" cols="80" rows="5"></textarea>
 
     <input type="submit" value="Registrate"><br>
-
+    </fieldset> 
 
 </body>
 </html>
