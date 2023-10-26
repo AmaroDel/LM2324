@@ -6,6 +6,7 @@
     <title>Formulario de pago</title>
 </head>
 <body>
+ <p><b>FORMULARIO DE PAGO</b></p><br>
 <fieldset>
     <legend><b>Información de contacto</b></legend>
 <fieldset>
@@ -16,7 +17,7 @@
     <label for="">Estudiante</label><br>
     <input type="radio" name="profesion" id="">
     <label for="">Otro</label><br>
-</fieldset>
+</fieldset><br>
 <fieldset>
     <legend>Tratamiento</legend>
     <input type="radio" name="tratamiento" id="">
@@ -25,7 +26,7 @@
     <label for="">Dr/Dra</label><br>
     <input type="radio" name="tratamiento" id="">
     <label for="">Otro</label><br>
-</fieldset>
+</fieldset><br>
 <label for="">Nombre</label>
 <input type="text" name="nombre" id="" required><br>
 <label for="">Correo</label>
@@ -34,25 +35,31 @@
 <input type="text" name="numero" id="" required><br>
 <label for="">Contraseña</label>
 <input type="text" name="contraseña" id="" required>
-</fieldset>
+</fieldset><br>
 
 <fieldset>
     <legend><b>Información de pago</b></legend>
 
+<label for="">Tipo de tarjeta</label>
+<select name="sexo" id="">
+    <option value="visa">Visa</option>
+    <option value="mastercard">Mastercard</option>
+    <option value="american_express">America Express</option>
+</select><br> <br>
 <label for="">Número de tarjeta</label>
 <input type="text" name="tarjeta" id="" required><br>
 <label for="">Fecha de caducidad</label>
-<input type="date" name="caducidad" id=""><br>
+<input type="date" name="caducidad" id="" required><br>
 <label for="">Cuenta de PayPal</label>
 <input type="text" name="paypal" id="" required><br>
 <label for="">Método de pago preferido</label>
-<form action="">
-    <select name="sexo" id="">
+<select name="sexo" id="">
     <option value="tarjeta">Tarjeta de crédito</option>
     <option value="paypal">PayPal</option>
 </select>
-</form>
 
-</fieldset>
+</fieldset><br>
+<input type="submit" value="VALIDAR EL PAGO"  style="background-color: black;color: white;"><br>
+
 </body>
 </html>
