@@ -6,4 +6,8 @@ background: url('bg.jpg') no-repeat center center fixed;
 background-size: cover; /* Para que cubra toda la pantalla */
 
 }
-p::first-letter
+p::first-letter{
+    font-size: 200%;
+    font-weight: bold;
+
+}
