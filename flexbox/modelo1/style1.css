@@ -1,0 +1,9 @@
+/* Esta es la hoja de estilo del ejercicio 1 CSS Flexbox del modelo del examen */
+
+body{
+font-family: 'Trebuchet MS', 'Geneva', sans-serif;
+background: url('bg.jpg') no-repeat center center fixed;
+background-size: cover; /* Para que cubra toda la pantalla */
+
+}
+p::first-letter
