@@ -66,8 +66,7 @@ body{
 main {
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 0.5rem solid;
-    order: 2;
+    border-bottom: 0.5rem solid black;
 }
 nav, header{
     flex: -1;
