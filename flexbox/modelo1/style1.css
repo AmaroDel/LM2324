@@ -9,5 +9,6 @@ background-size: cover; /* Para que cubra toda la pantalla */
 p::first-letter{
     font-size: 200%;
     font-weight: bold;
+    color: #4c3803;
 
 }
