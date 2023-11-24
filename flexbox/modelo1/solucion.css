@@ -1,7 +1,7 @@
 html {
   background-color: lightgrey;
   font-family: trebuchet, geneva, sans-serif;
-  background: url('images/bg.jpg') no-repeat center center fixed; 
+  background: url('bg.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover; /* Compatibilidad navegador Safari */
   -moz-background-size: cover;
   -o-background-size: cover;
