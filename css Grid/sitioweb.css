@@ -7,13 +7,14 @@ html {
   .grid-container {
     display: grid;
     width: 80%;
-    height: 80%;
+    height: 84%;
     grid-template-columns: auto auto auto;
     background-color:lightgray;
     padding: 20px;
     border: 1px solid black;
     margin: 0 auto;
     box-sizing: border-box;
+    grid-template-areas: ;
   }
 
   .grid-item {
@@ -25,9 +26,18 @@ html {
 
 header {
     background-color: lightblue;
+    height: 10%;
     color: #4C3803;
     text-align: center;
     border-bottom: 1px solid;
     border-radius: 20px;
     order:1;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  nav{
+    height: 20%;
+  }
+
+  aside{
+    height: 10%;
   }
