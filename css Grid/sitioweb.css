@@ -14,6 +14,11 @@ html {
     border: 1px solid black;
     margin: 0 auto;
     box-sizing: border-box;
+    grid-template-areas:
+    'header header'
+    'menu menu'
+    'contenido banners'
+    'footer footer';
   }
 
   .grid-item {
@@ -23,11 +28,24 @@ html {
     line-height: 150px;
   }
 
-header {
+#item1 {
+    grid-area: cabecera;
     background-color: lightblue;
-    color: #4C3803;
-    text-align: center;
     border-bottom: 1px solid;
-    border-radius: 20px;
-    order:1;
+  }
+
+  #item2{
+    grid-area: menu;
+  }
+
+  #item3{
+    grid-area: contenido;
+  }
+
+  #item4{
+    grid-area: banners;
+  }
+
+  #item5{
+    grid-area: footer;
   }
