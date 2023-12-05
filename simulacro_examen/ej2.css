@@ -1,0 +1,56 @@
+body {
+  margin: 1rem;
+}
+
+body, input, select, textarea {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(52, 49, 49);
+  padding: 1rem;
+}
+
+fieldset {
+    border: 1px solid white;
+  }
+
+#rejilla {
+    display: grid;
+    box-sizing: border-box;
+    max-width: 1170px;
+    margin: auto;
+    padding: 1em;
+    grid-template-columns: auto auto auto;
+  }
+  
+  
+  .item {
+    width: 100%;
+    border: 1px solid black;
+
+  }
+
+#item1 {
+    margin-left: 5px;
+    grid-area: 1 / 1 / 3 / 2;
+    background-color: rgb(11, 76, 26);
+    color: white;
+
+  }
+
+  #item2 {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  #item3 {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+
+  #item4 {
+    grid-area: 2 / 2 / 3 / 4;
+  }
+    #boton{
+        background-color: rgb(11, 76, 26);
+        color: white;
+        width: 100%;
+    }
+
+  
