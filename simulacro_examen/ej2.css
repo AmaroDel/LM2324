@@ -48,6 +48,7 @@ body{
 
   #item6 {
     grid-area: 'textarea';
+    grid-column: 1/span 2;
   }
 
   #item7 {
