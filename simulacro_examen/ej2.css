@@ -9,11 +9,7 @@ body{
     border: 2px black;
     grid-template-rows: auto auto auto auto;
     grid-template-columns: auto auto;
-    grid-template-areas:
-    'datos nombre apellidos'
-    'datos email asunto'
-    'datos textarea textarea'
-    'datos boton boton';
+    
   }
 
   .grid-item {
@@ -21,6 +17,11 @@ body{
     border: 1px solid black;
     text-align: center;
     
+  }
+  
+  .row {
+    grid-template-areas:
+    'nombre apellidos';
   }
 
   #item1 {
