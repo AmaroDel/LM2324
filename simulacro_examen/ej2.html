@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario contacto con Grid</title>
-    <link rel="stylesheet" href="ej2.css">
+    <link rel="stylesheet" href="plantillaej2.css">
 </head>
+
 <body>
-    <div id="rejilla">
-    <div id="item1">
+
+<div id="grid-container">
+    <div class="grid-item" id="item1">
         <h2>IES Antonio Machado</h2>
         <p>Calle Arroyo 80</p>
         <p>41008 Sevilla</p>
@@ -17,30 +19,41 @@
     </div>
 
     <form action="#" method="post" enctype='multipart/form-data'>
-      <fieldset>
-        <legend><b>Conctacta con nosotros</b></legend>
-        <div id="item2" class="item">
-          <label for="name">Nombre</label><br>
-          <input id="name" type="text" name="class">
-          <label for="email">Email</label><br>
-          <input type="email" name="email">
-         </div>
+        <fieldset>
+          <legend><b>Contacta con nosotros</b></legend>
 
-          <div id="item3" class="item">
-          <label for="apellidos">Apellidos</label><br>
-          <input id="apellidos" type="text" name="class">
-          <label for="asunto">Asunto</label><br>
-          <input id="asunto" type="text" name="class">
-        </div>
-
-        <div id="item4" class="item">
-            <label for="">Escribe tu mensaje</label><br>
-            <textarea maxlength="50" name="descripcion" id="" cols="80" rows="5"></textarea><br>
-        
-            <input type="submit" value="Enviar" id="boton"><br>
-        </div>
-      </fieldset>
-    </form>
+    <div class="grid-item" id="item2"> 
+        <label for="name">Nombre</label><br>
+        <input id="name" type="text" name="class">
     </div>
+
+    <div class="grid-item" id="item3">
+        <label for="apellidos">Apellidos</label><br>
+        <input id="apellidos" type="text" name="class">
+    </div>
+
+    <div class="grid-item" id="item4">
+        <label for="email">Email</label><br>
+        <input type="email" name="email">
+    </div>
+
+    <div class="grid-item" id="item5">
+        <label for="asunto">Asunto</label><br>
+        <input id="asunto" type="text" name="class">
+    </div>
+
+    <div class="grid-item" id="item6">
+        <label for="">Escribe tu mensaje</label><br>
+        <textarea maxlength="50" name="descripcion" id="" cols="80" rows="5"></textarea>
+    </div>
+    
+    <div class="grid-item" id="item7">
+        <input type="submit" value="Enviar" id="boton">
+    </div>
+
+        </fieldset>
+    </form>
+</div>
+
 </body>
 </html>
