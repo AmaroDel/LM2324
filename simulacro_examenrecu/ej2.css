@@ -1,0 +1,132 @@
+*{box-sizing: border-box;}
+
+body{
+
+    display: flex;
+    flex-direction: column;
+    min-width: 100vh;
+    margin: 0px;
+    background-color: white;
+    font-family: "Century Gothic", Helvetica, sans-serif;
+    font-size: 1.1em;
+}
+
+header{
+
+    background-color: darkgray;
+    text-align: center;
+}
+
+footer{
+
+
+    background-color: darkgoldenrod;
+    text-align: center;
+}
+
+nav{
+
+    background-color: darkcyan;
+    width: 55em;
+}
+
+nav a {
+
+    display: block;
+    padding: 0.5em 1em;
+    color: white;
+    text-decoration: none;
+    border-bottom: solid rgba(255,255,255,0.3);
+}
+
+nav a:hover{
+
+    cursor: progress;
+}
+
+section{
+
+    background-color: darkolivegreen;
+}
+
+section img {
+
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 20px 20px;
+    border-radius: 2vh;
+    max-width: 99%;
+    border: 5px solid goldenrod;
+}
+
+p::first-letter{
+
+    font-size: 2.2em;
+    color: darkgray;
+}
+
+header,nav,section,footer{
+
+    padding: 20px;
+    margin: 2px;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    color: white;
+
+}
+
+main{
+
+    display: flex;
+    flex-direction: row;
+}
+
+.subrayar{text-decoration: underline;}
+.negrita{font-weight: bold;}
+.superindice{vertical-align: super; font-size: smaller;}
+.italica{font-style: italic;}
+.subindice{vertical-align: sub;font-size: smaller;}
+
+@media print {
+
+    nav{display:none;}
+    body{font-family: 'Courier New', Courier, monospace;}
+}
+
+@media screen and (max-width:640px){
+
+    body{
+        
+        display: flex;
+        flex-direction: column;
+        min-width: auto;
+
+    }
+
+    main{
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    header{
+        
+        order: 0;
+
+    }
+
+    nav{ 
+        order: 1;
+        width: auto;
+    }
+    section{
+        order: 2;
+    }
+    footer{
+
+        order: 3;
+    }
+
+}
