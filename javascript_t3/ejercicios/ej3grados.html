@@ -9,16 +9,11 @@
     <h1>Calculadora de Grados Celsius a Fahrenheit</h1>
 
     <script>
-        var celsius = document.getElementById('cantidad').value;
-  
-        var fahrenheit = celsius * 9/5 + 32
-        document.write("Son " + fahrenheit + "ºF")
-        document.getElementById("resultado").innerHTML = resultado + "€";
-
+       
     </script>
     
-    <input id="cantidad" type="text" placeholder="Introduzca una temperatura en grados Celsius">
-    <button onclick="transformar('celsius')">Pasar a grados fahrenheit</button>
+    <input id="grados" type="text" placeholder="Grados Celsius">
+    <button onclick="transformar('celsius')">Transformar a fahrenheit</button>
     <p id="resultado"></p>
 </body>
 </html>
