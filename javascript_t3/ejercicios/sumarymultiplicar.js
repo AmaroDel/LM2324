@@ -21,7 +21,7 @@ function suma() {
 
 
 function multi() {
-    var m = 1; // Inicializar el producto en 1
+    var m = 1;
 
     for (var i = 0; i < Numeros.length; i++) {
         m *= Numeros[i];
