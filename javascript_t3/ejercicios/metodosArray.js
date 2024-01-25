@@ -3,14 +3,14 @@ var ElementList = [""]
 
 function add() {
 
-    var elemento = document.getElementById("introducido").value;
+    var elemento = document.getElementById("elemento").value;
     ElementList.push(elemento);
     document.getElementById("escribir").innerHTML = ElementList;
 }
 
 function remove(){
 
-    var elemento = document.getElementById("introducido").value;
+    var elemento = document.getElementById("elemento").value;
     ElementList.shift(elemento);
     document.getElementById("escribir").innerHTML = ElementList;
 }
