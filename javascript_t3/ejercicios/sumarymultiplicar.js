@@ -7,19 +7,25 @@ function add() {
 
 }
 
-var a = 0
+var s = 0
 
 function suma() {
-    var a = 0
+    var s = 0
     for (var i = 0 ; i< Numeros.length; i++) {
-        a += Numeros[i];
+        s += Numeros[i];
     }
-    document.getElementById("mostrar").innerHTML = a
+    document.getElementById("mostrar").innerHTML = s
 
 }
 
 
 
 function multi() {
-    
+    var m = 1; // Inicializar el producto en 1
+
+    for (var i = 0; i < Numeros.length; i++) {
+        m *= Numeros[i];
+    }
+
+    document.getElementById("mostrar").innerHTML = m;   
 }
