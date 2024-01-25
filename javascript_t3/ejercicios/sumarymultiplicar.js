@@ -7,10 +7,18 @@ function add() {
 
 }
 
+var a = 0
+
 function suma() {
-    
+    var a = 0
+    for (var i = 0 ; i< Numeros.length; i++) {
+        a += Numeros[i];
+    }
+    document.getElementById("mostrar").innerHTML = a
 
 }
+
+
 
 function multi() {
     
