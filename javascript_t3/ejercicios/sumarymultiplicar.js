@@ -7,10 +7,10 @@ function add() {
 
 }
 
-var s = 0
+var s = 0 /* Se ejecuta solo una vez, por lo que no sirve, aquí está mal*/
 
 function suma() {
-    var s = 0
+    s = 0 /* Cada vez que le doy al botón */
     for (var i = 0 ; i< Numeros.length; i++) {
         s += Numeros[i];
     }
