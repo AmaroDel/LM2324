@@ -16,9 +16,6 @@ function imagen(){
             src: "../images/arbolrosa.jpg"
         }
     ];
-
-    var Eleccion = []
-
-    
-
 }
+
+    var imgElement = document.getElementById("imagenrandom");
