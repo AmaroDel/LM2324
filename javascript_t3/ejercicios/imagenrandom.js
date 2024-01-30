@@ -18,4 +18,4 @@ function imagen(){
     ];
 }
 
-    var imgElement = document.getElementById("imagenrandom");
+    var imagenelegida = document.getElementById("imagenrandom").innerHTML;
