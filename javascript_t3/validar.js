@@ -1,10 +1,10 @@
 function validar(elementos){
-    let estancorrectos = true;
-    for (var i=0; i<elementos.lenght; i++)(
-        if (elementos[i].value = ""){
-
+    let estanCorrectos = true;
+    for (var i=0; i<elementos.length; i++){
+        if (elementos[i].value == ""){
+            document.getElementById("campo"+ (i+1).toString()).innerHTML = "El campo " + elementos[i].if
+                estanCorrectos = false;
         }
-        estancorrectos = false;
-    )
+    }
     return estanCorrectos
 }
