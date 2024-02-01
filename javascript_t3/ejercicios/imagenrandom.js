@@ -1,21 +1,12 @@
-function imagen(){
-    var Imagen = [
-        {
-            src: "../images/arbolverde.jpg"
-        },
-        {
-            src: "../images/arbolamarillo.jpg"
-        },
-        {
-            src: "../images/arbolotono.jpg"
-        },
-        {
-            src: "../images/arbolnevado.jpg"
-        },
-        {
-            src: "../images/arbolrosa.jpg"
-        }
-    ];
+let archivos=["arbolverde.jpg", "arbolamarillo.jpg", "arbolotono.jpg", "arbolnevado.jpg", "arbolrosa.jpg"]
+
+
+function random(min, max) {
+    return Math.floor((Math.random() * (max - min + 1)) + min);
 }
 
-    var imagenelegida = document.getElementById("imagenrandom").innerHTML;
+
+function seleccionaArbol(){
+    let numero = random(0,archivos.length - 1);
+    document.getElementById("arbol").src = "../images/" + archivos[numero];
+}
