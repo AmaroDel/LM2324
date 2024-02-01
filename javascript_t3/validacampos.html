@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <script src="validar.js"></script>
+</head>
+<body>
+    <form action="">
+        <label for="">Nombre</label><input id="nombre" type="text"><br>
+        <label for="">Apellidos</label><input id="apellido" type="text"><br>
+        <label for="">Email</label><input id="email" type="email"><br>
+        <label for="">Password</label><input id="password" type="password" required><br>
+        <label for="">Acepta la politica de provacidad</label><input type="checkbox"><br>
+        <button onclick="validar(document.getElementsByTagName('input'))">Validar</button>
+    </form>
+    
+</body>
+</html>
