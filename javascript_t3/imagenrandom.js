@@ -8,5 +8,5 @@ function random(min, max) {
 
 function seleccionaArbol(){
     let numero = random(0,archivos.length - 1);
-    document.getElementById("arbol").src = "../images/" + archivos[numero];
+    document.getElementById("arbol").src = "images/" + archivos[numero];
 }
