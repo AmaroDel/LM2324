@@ -48,14 +48,26 @@ function validaPasswords(){
     return passwordsOK;
 }
 
+
+
+
+
 function validarDNI(){
     var letra=['T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'];
     var cadena = document.getElementById("dni").value; // DNI Completo
     var numero = parseInt(cadena.substring(0,8)); // Parte numérica
-    var letraUsuario = cadena[8]; // Letra escrita por el usuario
+    var letraUsuario = cadena[8].toUpperCase(); // Letra escrita por el usuario, el string..toUpperCase() sirve para que convierta la letra a mayus el sistema
     var letraReal = letra[numero%23]; // Letra "real" del DNI calculada según "fórmula"
     var dniValido =true;
     if (letraUsuario!=letraReal) // Si no coincide letras es falso
         dniValido = false;
     return dniValido;
+}
+
+function ceroespacios(){
+    dni.addEventListener("keyup",e=>{
+        let string = e.target.value
+        e.target.value = string.trim();
+    
+    })
 }
