@@ -1,26 +1,40 @@
-var Numeros = []
+var notas = []; //variable global para las calificaciones
 
-function add() {
-    var n = parseFloat(document.getElementById("n").value);
-    if(n>=0 && n<=10 ){
-    Numeros.push(n);
-    document.getElementById("mostrar").innerHTML = Numeros;
-} else if (n>10){
-    document.getElementById("mostrar").innerHTML = "Este número es mayor que 10"
-} else  document.getElementById("mostrar").innerHTML = "Este número no es positivo"
+function anadir() {
+
+let numero = parseFloat(document.getElementById("numero").value);
+//Borramos cualquier mensaje de error previo
+document.getElementById("aviso").innerHTML= ""
+if (isNaN(numero)){  //Si true significa que no es un número
+            document.getElementById("aviso").innerHTML= "Debes introducir un número entre 0 y 10"
+}
+else{
+    // Compruebo que está comprendido entre 0 y 10
+    if (numero<0 || numero>10){
+    document.getElementById("aviso").innerHTML= "Debes introducir un número entre 0 y 10"
+    }
+    else{
+    notas.push(numero);
+    document.getElementById("notas").innerHTML = notas;
+    }
+}
 }
 
 
 function borrar() {
-    Numeros = [];
-    document.getElementById("mostrar").innerHTML = Numeros;
+    document.getElementById("aviso").innerHTML = "";
+    document.getElementById("notas").innerHTML = "";
+    notas = [];
+    document.getElementById("resultado").innerHTML = notas;
 }
 
-function media() {
-    s = 0 /* Cada vez que le doy al botón */
-    for (var i = 0 ; i< Numeros.length; i++) {
-        s += Numeros[i];
+function calcularMedia() {
+    let total=0.0;
+    for (var i=0; i<notas.length;i++){
+        total += notas[i];
     }
-    document.getElementById("mostrar").innerHTML = s/Numeros.length
+    total = total/notas.length;
+    document.getElementById("resultado").innerHTML = total.toFixed(2);
 
-}
+
+}   
