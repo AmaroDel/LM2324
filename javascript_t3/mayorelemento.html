@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mayor elemento</title>
+    <script src="mayor.js"></script>
+    <style>
+        #aviso {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h1>Mayor elemento</h1>
-    <input type="text" id="elemento">
-    <button >Añadir</button>
-    <button>Numero más grande</button>
+    <input type="number" id="elemento">
+    <p id="aviso"></p>
+    <p id="mostrar"></p>
+    <button onclick="anadir()">Añadir</button>
+    <button onclick="mayor()">Numero más grande</button>
 </body>
 </html>
