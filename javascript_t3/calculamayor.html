@@ -8,7 +8,7 @@
     <script>
         var listaNumeros=[]; //Vector
         function anadir(){
-            let numero = document.getElementById("numero").value;
+            let numero = parseFloat(document.getElementById("numero").value);
             listaNumeros.push(numero);
             document.getElementById("numeros").innerHTML = listaNumeros;
         }
@@ -19,6 +19,7 @@
     <input type="text" id="numero" placeholder="Introduce un número">
     <p id="numeros"></p>
     <p id="resultado"></p>
+    <button onclick="imprimir(ListaNumeros)">Imprimir elementos</button>
     <button onclick="anadir()">Añadir número</button>
     <button onclick="var maximo=mayor(listaNumeros);document.getElementById('resultado').innerHTML=maximo;">Calcular mayor!</button>
     <button  onclick="var minimo=menor(listaNumeros);document.getElementById('resultado').innerHTML=minimo;">Calcular menor!</button>
