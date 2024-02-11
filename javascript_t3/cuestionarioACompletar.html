@@ -12,9 +12,28 @@ div#examen
 </style>
 <script> 
 // Hay que hacer un array de arrays
-    vector = [["¿Cuánto es 10 + 4?", "12", 14, 16, B], [¿Cuánto es 10 + 4?, 12, 14, 16, B]]
+    vector = [
+        ["¿Cuánto es 10 + 4?", "12", "14", "16", "14"], 
+        ["¿Cuánto es 20 - 9?", "7", "13", "11", "11"]
+    ];
  
-for(var i = 0; i<vectorlength; i++)
+var contador = 0
+
+function X(){
+    for(var i = 0; i<vectorlength; i++){
+            let pregunta = vector[i][0];
+            let opciones = [vector[i][1], vector[i][2], vector[i][3]];
+            let respuesta = vector[i][4];
+
+        if (let opciones = let respuesta){
+        contador++
+    }
+
+}
+};
+
+
+
 </script>
 </head>
 
