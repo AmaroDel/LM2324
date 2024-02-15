@@ -48,7 +48,7 @@ function comprobarRespuesta(){
 			opcion = opciones[i].value;
 		}
 	}
-	if(preguntas[pos][4]) /* Si la opción marcada es la correcta según el array de arrays preguntas entonces ... */
+	if( opcion == preguntas[pos][4]) /* Si la opción marcada es la correcta según el array de arrays preguntas entonces ... */
     {
 		correctas+=1; /* Contamos que ha acertado */
 	}
