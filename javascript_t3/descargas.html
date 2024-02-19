@@ -4,11 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descargas</title>
-    <script src="descargas.js"></script>
-</head>
-<body>
-    <div id="padre">
 
-    </div>
+
+    <a href="" target="_blank"></a>
+</head>
+<body onload="completar()">
+    <ul id="padre">
+
+    </ul>
+
+    <script>
+
+        var cajap = document.getElementById("padre");
+
+        function completar(){
+            for (var i = 1; i <= 20; i++) {
+                var texto = document.createElement("li");
+        
+                texto.textContent = "Elemento " + i;
+        
+
+                var enlase = document.createElement("a");
+
+                var imagen = document.createElement("img");
+
+                enlase.setAttribute("href", "ficheros/fichero" + i + ".pdf");
+
+                enlase.setAttribute("target",'_blank');
+
+                imagen.setAttribute("src", 'images/download.png')
+
+                enlase.appendChild(texto);
+
+                enlase.appendChild(imagen);
+
+                cajap.appendChild(enlase);
+                
+            }
+        }
+        
+    </script>
+
 </body>
 </html>
