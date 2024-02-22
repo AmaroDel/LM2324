@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiador de temas</title>
+</head>
+<body>
+    <h1>Cambiador de temas</h1>
+    <button onclick="tema('blanco')">Claro</button>
+    <button onclick="tema('negro')">Oscuro</button>
+<script>
+    function tema(color){
+    if(color === 'negro') {
+        document.body.style.backgroundColor = "black";       
+    } else{
+        document.body.style.backgroundColor = "white";
+    }
+        localStorage.setItem("eleccion", color );
+
+    }
+
+window.onload = tema(color)
+var eleccionGuardada = localStorage.getItem("eleccion");
+if (eleccionGuardada) {
+        tema(eleccionGuardada);
+    }
+
+
+</script>
+</body>
+</html>
