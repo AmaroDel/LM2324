@@ -10,13 +10,20 @@
     <button onclick="guardar()">Guardar</button>
     <button onclick="borrar()">Borrar</button>
     <script>
+        function cargaPagina(){
+            let valor=localStorage.getItem("información")
+            if (valor!= null)
+            alert("Bienvenido "+ valor);
+        }
+
         function guardar(){
             let info = document.getElementById("info").value;
-            localStorage.setItem("Información",info);
+            localStorage.setItem("información",info);
         }
         function borrar(){
             localStorage.clear();
         }
+        window.onload = cargaPagina();
     </script>
 
 </body>
