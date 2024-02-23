@@ -22,12 +22,12 @@
 
     }
 
-window.onload = tema(color)
-var eleccionGuardada = localStorage.getItem("eleccion");
-if (eleccionGuardada) {
+    window.onload = function() {
+    var eleccionGuardada = localStorage.getItem("eleccion");
+    if (eleccionGuardada) {
         tema(eleccionGuardada);
     }
-
+    };
 
 </script>
 </body>
