@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Añadir tarea</title>
+    <title>Lista tarea</title>
 </head>
 <body>
     <h1>Anadir tareas</h1>
@@ -14,22 +14,29 @@
 
 
     <script>
+        var problemas=[];
         function anadirElemento() {
-            var tareas = document.getElementById("input").value
+            var tarea = document.getElementById("input").value
             var lista = document.getElementById("lista");
             var elemento = document.createElement("li");
-            elemento.textContent = tareas;
+            elemento.textContent = tarea;
             lista.appendChild(elemento);
-
-            localStorage.setItem("tarea", tareas );
+            problemas.push(elemento);
+            var cadena = "";
+            for(var i=0; i<problemas.length;i++){
+                cadena = cadena + problemas[i].textContent + ",";
+            }
+            //Al finalizart el bucle en cadena tengo mi lista de tareas
+           localStorage.setItem("problemas", cadena );
         }
-
-        window.onload = function() {
-    var guardado = localStorage.getItem("tarea")
-    if (guardado) {
-        añadirElemento(guardado);
-    }
-    };
+        function cargarPagina(){
+            let cadenaTareas = localStorage.getItem("problemas")
+            if(cadenaTareas!=null)
+            {
+                //Tengo tareas pendientes
+            var elemento = document.createElement("li");
+            }
+        }
     </script>
 </body>
 </html>
