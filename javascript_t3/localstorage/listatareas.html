@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir tarea</title>
+</head>
+<body>
+    <h1>Anadir tareas</h1>
+    <ul id="lista">
+    </ul>
+    <input id="input" type="text" placeholder="Escribe tu tarea">
+    <button onclick="anadirElemento()">Añadir</button>
+
+
+    <script>
+        function anadirElemento() {
+            var tareas = document.getElementById("input").value
+            var lista = document.getElementById("lista");
+            var elemento = document.createElement("li");
+            elemento.textContent = tareas;
+            lista.appendChild(elemento);
+
+            localStorage.setItem("tarea", tareas );
+        }
+
+        window.onload = function() {
+    var guardado = localStorage.getItem("tarea")
+    if (guardado) {
+        añadirElemento(guardado);
+    }
+    };
+    </script>
+</body>
+</html>
