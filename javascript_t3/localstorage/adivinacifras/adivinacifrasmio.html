@@ -35,7 +35,7 @@
 
     <button id="comprobar" onclick="comprobar()">Comprueba</button>
 
-    <p id="solucion"></p>
+    <p id="respuesta"></p>
     
 
     
@@ -53,25 +53,38 @@ function generaNumero(){
 document.getElementById("numero").innerHTML = numeroAzar;        
 }
 
-
-
 function iniciar(){
   inicio = new Date().getTime();
   generaNumero();
   document.getElementById("comenzar").style.display = "none";
-  document.getElementById("comprueba").style.display = "block";
+  document.getElementById("comprobar").style.display = "block";
   document.getElementById("input").style.display = "block";
+  var recordActual = window.localStorage.getItem("record");
+  if (recordActual!=null)
+    document.getElementById("solucion").innerHTML = "El record actual está en " + recordActual + " segundos. <br>" + numeroAzar;
+  document.getElementById("respuesta").innerHTML = "";
 }
 
 function comprobar(){
   let intento = document.getElementById("input").value
-
-  let correcto =document.getElementById("numero").innerHTML
-  if ( intento == correcto){
-    let tiempo = console.timeEnd(contando);
-    alert("acertaste en " + tiempo + " segundos")
+  if ( intento == numeroAzar){
+    
+    let fin = new Date().getTime();
+    let diferencia = (fin-inicio)/1000;
+    document.getElementById("respuesta").innerHTML = "Enhorabuena, acertaste en " + diferencia + " segundos";
+    var record = window.localStorage.getItem("record");
+    if (record!=null){
+    var recordReal = parseFloat(record);
+    if (diferencia<recordReal){
+        window.localStorage.setItem("record",diferencia.toString());
+        document.getElementById("respuesta").innerHTML += "¡Nuevo record!";
+                    }
   }
-
+  else{
+      window.localStorage.setItem("record",diferencia.toString());
+      document.getElementById("resultado").innerHTML += " ¡Nuevo record!";
+}
+}
 }
 
 </script>
