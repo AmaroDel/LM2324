@@ -1,7 +1,7 @@
 function iniciar(){
     random(100, 999)
     document.getElementById("input").innerHTML = 
-    var respuesta = document.getElementById()
+    let respuesta = document.getElementById()
 }
 
 // Notesé que también en este caso `min` será incluido y `max` excluido
