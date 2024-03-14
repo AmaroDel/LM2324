@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adivina</title>
-    <script src="adivinacifras.js"></script> 
+    
+    <style>
+            #input {
+                display: none;
+            }
 
+            #comprobar {
+                display: none;
+            }
+
+            
+
+    </style>
 </head>
 <body>
 
@@ -20,9 +31,9 @@
 
     <p id="record"></p>
 
-    <button onclick="iniciar()">Comenzar</button>
+    <button id="comenzar" onclick="iniciar()">Comenzar</button>
 
-    <button onclick="comprobar()">Comprueba</button>
+    <button id="comprobar" onclick="comprobar()">Comprueba</button>
 
     <p id="solucion"></p>
     
@@ -30,4 +41,39 @@
     
     
 </body>
+
+<script>
+
+var numeroAzar;
+var inicio;
+function generaNumero(){
+  numeroAzar = Math.ceil(Math.random()*9).toString()
+    + Math.ceil(Math.random()*9).toString()
+    + Math.ceil(Math.random()*9).toString();
+document.getElementById("numero").innerHTML = numeroAzar;        
+}
+
+
+
+function iniciar(){
+  inicio = new Date().getTime();
+  generaNumero();
+  document.getElementById("comenzar").style.display = "none";
+  document.getElementById("comprueba").style.display = "block";
+  document.getElementById("input").style.display = "block";
+}
+
+function comprobar(){
+  let intento = document.getElementById("input").value
+
+  let correcto =document.getElementById("numero").innerHTML
+  if ( intento == correcto){
+    let tiempo = console.timeEnd(contando);
+    alert("acertaste en " + tiempo + " segundos")
+  }
+
+}
+
+</script>
+
 </html>
