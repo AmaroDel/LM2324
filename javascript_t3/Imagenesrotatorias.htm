@@ -7,17 +7,17 @@
 </head>
 <body>
     <h1>Anuncios rotatorios</h1>
-    <img src="rotatorias/banner0.png" id="fotoActual" onclick="enlace()">
+    <img src="images/banner0.png" id="fotoActual" onclick="enlace()">
 <script>
     var banner=new Array();
     var indice=0;
     var todaslasfotos;
-    banner[0]="rotatorias/banner0.png";
-    banner[1]="rotatorias/banner1.png";
-    banner[2]="rotatorias/banner2.png";
-    banner[3]="rotatorias/banner3.png";
-    banner[4]="rotatorias/banner4.png";
-    banner[5]="rotatorias/banner5.png";
+    banner[0]="images/banner0.png";
+    banner[1]="images/banner1.png";
+    banner[2]="images/banner2.png";
+    banner[3]="images/banner3.png";
+    banner[4]="images/banner4.png";
+    banner[5]="images/banner5.png";
     function publicidad(){
         const myTimeout = setTimeout(siguiente, 3000);
     }
@@ -28,7 +28,7 @@
     else {
         indice=indice+1;
     }
-    document.getElementById("fotoActual").src = "rotatorias/banner"+indice+".png" //se llaman a las fotos aqui
+    document.getElementById("fotoActual").src = "images/banner"+indice+".png" //se llaman a las fotos aqui
     publicidad();
 }
 
