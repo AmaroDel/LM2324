@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery 1</title>
+    <style>
+        div{ 
+            background-color: red;
+            width: 300px;
+            height:  300px;
+            color: white;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script>
+       $(function () {
+        $("div").mouseenter(function(){
+            $("#ejemplo").hide();
+        });
+        $("div").mouseleave(function(){
+            $("#ejemplo").show();
+        })
+       });
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea sed libero earum doloremque eum, harum nobis eaque labore esse hic sit a necessitatibus suscipit blanditiis distinctio voluptatem praesentium magnam quis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui minima pariatur eligendi corrupti perferendis veniam, voluptate quibusdam deleniti, officiis, excepturi non beatae adipisci ducimus autem maiores ipsum quasi.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit veniam est voluptatibus aliquam fugit, eaque obcaecati et. Enim facilis a accusamus reiciendis nisi molestiae. Sequi deserunt tempore illo magnam neque!</p>
+
+    <div>
+        <p id="ejemplo">Párrafo dentro de la caja</p>
+    </div>
+</body>
+</html>

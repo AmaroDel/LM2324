@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 jQuery</title>
+    <!-- Añadimos jquery-->
+    <script src="jquery.js"></script>
+    <script>
+        $(function () {
+            $("#ocultar").click(function(){
+                $("h1,p").hide();
+            })
+            $("#aparecer").click(function(){
+                $("h1,p").show();
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>Esto es un h1</h1>
+    <p>P1</p>
+    <p>P2</p>
+    <p>P3</p>
+    <button id="ocultar">Ocultar</button>
+    <button id="aparecer">Aparecer</button>
+</body>
+</html>
