@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <h1>Encabezado</h1>
+    <img src="foto.jpg" alt="">
+    <p id="primero">Lorem ipsum dolor sit, amet <a href="https://www.marca.com">consectetur</a> adipisicing elit. Dolores debitis quod ipsa nam! Ullam ea porro, voluptatum delectus sunt voluptatem laborum aliquam ducimus architecto magnam molestias molestiae. Maxime, et magni!</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse fugiat laborum, laboriosam quam nulla beatae dolorum consequatur vero delectus illum voluptate voluptatibus ipsum ipsa asperiores modi tempore necessitatibus facilis atque?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium porro nesciunt, eos esse quia ratione aliquam exercitationem voluptatibus temporibus cupiditate similique aliquid debitis magni modi repudiandae odit reiciendis dignissimos architecto!</p>
+    <button id="boton1">Obtener html del encabezado</button>
+    <button id="boton2">Obtener src de la imagen</button>
+    <button id="boton3">Obtener html de un parrafo</button>
+    <script>
+        $(document).ready(function () {
+            $("#boton1").click(function(){
+                alert("El html del encabezado es: "+$("h1").html());
+            });
+            $("#boton2").click(function(){
+                alert("El src de la imagen es: "+$("img").attr("src"));
+            });
+            $("#boton3").click(function(){
+                alert("El html del parafo es: "+$("#primero").html());
+            });
+        });
+    </script>
+
+</body>
+</html>
