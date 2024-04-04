@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variadito</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+    <h1>Encabezado 1</h1>
+    <h1>Encabezado 1</h1>
+    <h1>Encabezado 2</h2>
+    <p>Lorem ipsum, dolor <a href="http://" target="_blank" rel="noopener noreferrer">sit amet</a>  consectetur adipisicing elit. Modi optio pariatur amet tenetur rerum. Rerum perferendis impedit aliquid, eum, provident explicabo eius alias esse neque accusantium, dicta porro illum inventore.</p>
+    <img src="" alt="Es una foto">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt animi aliquid consequuntur doloribus laboriosam nesciunt id repudiandae laborum voluptas quas vero nostrum, iusto earum laudantium officiis magnam recusandae aliquam illo.</p>
+    <table>
+        <tr>
+        <th>Encabezado</th>
+        <th>Parrafos</th>
+        <th>Enlaces</th>
+        <th>Imagenes</th>
+        </tr>
+        <tr>
+        <td id="enc">
+            XXX
+        </td>
+        <td  id="par">
+            XXX
+        </td>
+        <td  id="enl">
+            XXX
+        </td>
+        <td  id="img">
+            XXX
+        </td>
+        </tr>
+    </table>
+    <button id="contar">Contar</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#enc").html(   
+                $("h1,h2").length    
+            );
+            $("#par").html(   
+                $("p").length    
+            );
+            $("#enl").html(   
+                $("a").length    
+            );
+            $("#img").html(   
+                $("img").length    
+            );
+        });
+    </script>
+</body>
+</html>
