@@ -15,7 +15,9 @@
             justify-content: center;
             color: white;
         }
-        
+        .invisible{
+            visibility: hidden;
+        }
     </style>
 </head>
 <body>
@@ -26,7 +28,7 @@
     <script>
         $(document).ready(function () {
             $("#desaparecer").click(function(){
-                $("#texto").fadeToggle();
+                $("#texto").toggleClass("invisible");
             })
         });
     </script>
