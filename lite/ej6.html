@@ -16,8 +16,8 @@
     <script>
         /* Completar el código jQuery aquí */
         $(document).ready(function () {
-        $.get("26208024b8a540ac5de71181908956c2").done(function(api){
-          $("#objetivo").text(datos['API'])
+        $.get("https://home.openweathermap.org/api_keys").done(function(api){
+          $("#objetivo").text(datos['Default'])
         }).fail(function(error){
             console.log(error)
        })
