@@ -16,6 +16,7 @@
         <p id="objetivo"></p>
     </div>
     <script>
+         /* Completar el código jQuery aquí */
          $.when($.get('1.json'), $.get('2.json')).then(function (r1, r2){
             let obj1 = r1[0]; // Me quedo con los datos
             let obj2 = r2[0];
