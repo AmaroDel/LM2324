@@ -60,6 +60,8 @@
         $(document).ready(function () {
             let url = "https://randomuser.me/api/"
             let esurl = "https://randomuser.me/api/?nat=es"
+            let varurl = "https://randomuser.me/api/?results=5&nat=es"
+            
             $("#btn-generico").click(function () {
                 $.get(url).done(function (datos) {
                     console.log(datos);
@@ -75,7 +77,7 @@
                     $(".city").text(city)
                 })
             })
-            
+
             $("#btn-espanol").click(function () {
                 $.get(esurl).done(function (datos) {
                     console.log(datos);
@@ -89,6 +91,28 @@
                     $(".username").text(username)
                     $(".email").text(email)
                     $(".city").text(city)
+                })
+            })
+
+            $("#btn-varios").click(function () {
+                $.get(varurl).done(function (datos) {
+                    console.log(datos);
+
+                    $("img").attr("src", "multiple.png");
+                    $("p").empty();
+
+                    for (var i = 0; i < datos.results.length; i++) {
+
+                        let fullname = datos.results[i].name.first + " " + datos.results[i].name.last;
+                        let username = datos.results[i].login.username;
+                        let email = datos.results[i].email;
+                        let city = datos.results[i].location.city;
+                        $(".fullname").append(fullname + "</br>");
+                        $(".username").append(username + "</br>");
+                        $(".email").append(email + "</br>");
+                        $(".city").append(city + "</br>");
+                    }
+
                 })
             })
         });
