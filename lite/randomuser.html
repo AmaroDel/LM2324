@@ -58,7 +58,7 @@
             let url = "https://randomuser.me/api/"
             let esurl = "https://randomuser.me/api/?nat=es"
             let varurl = "https://randomuser.me/api/?results=5&nat=es"
-            
+
             $("#btn-generico").click(function () {
                 $.get(url).done(function (datos) {
                     console.log(datos);
@@ -72,6 +72,12 @@
                     $(".username").text(username)
                     $(".email").text(email)
                     $(".city").text(city)
+                }).fail(function () {
+                    $(".fullname").text("Error del servidor")
+                    $(".username").empty
+                    $(".email").empty
+                    $(".city").empty
+                    $("img").empty
                 })
             })
 
@@ -88,6 +94,12 @@
                     $(".username").text(username)
                     $(".email").text(email)
                     $(".city").text(city)
+                }).fail(function () {
+                    $(".fullname").text("Error del servidor")
+                    $(".username").empty
+                    $(".email").empty
+                    $(".city").empty
+                    $("img").empty
                 })
             })
 
@@ -110,6 +122,12 @@
                         $(".city").append(city + "</br>");
                     }
 
+                }).fail(function () {
+                    $(".fullname").text("Error del servidor")
+                    $(".username").empty
+                    $(".email").empty
+                    $(".city").empty
+                    $("img").empty
                 })
             })
         });
