@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialogo</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#dialog" ).dialog({
+            autoOpen: false,
+            show: {
+              effect: "bounce",
+              duration: 2500
+            },
+            hide: {
+              effect: "drop",
+              duration: 1000
+            }
+          });
+       
+          $( "#opener" ).on( "click", function() {
+            $( "#dialog" ).dialog( "open" );
+          });
+        } );
+        </script>
+      </head>
+      <body>
+        <h1>Ejemplo de dialogo</h1>
+      <div id="dialog">
+        <p>Esto está oculto de manera predeterminada hasta que hagamos click en el boton</p>
+      </div>
+       
+      <button id="opener">Abrir</button>
+
+</html>
