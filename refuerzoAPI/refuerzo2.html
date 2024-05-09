@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refuerzo 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Foto aleatoria</h1>
+    <button id="btn">Confirmar</button>
+    <p id="resultados"></p>
+
+</body>
+
+<script>
+    let url = "https://api.unsplash.com/photos/random?client_id=WsFoNE7GVT3cpqsqho8UtUaguVmXINGl3rVcxlt2Q4g"
+
+    $(document).ready(function () {
+        $("#btn").click(function () {
+            $('#resultados').empty()
+            $.get(url).done(function (datos) {
+                let imagen = datos.urls.small
+                $('#resultados').append(
+                    '<p>' + '<img src="' + imagen + '"></p>'
+                );
+            })
+        })
+    });
+
+
+
+</script>
+
+</html>
