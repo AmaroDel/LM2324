@@ -24,15 +24,11 @@
             let url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=5c07181b8068ed4eca237be5fe1cd3fc&text=" +texto + "&format=json&nojsoncallback=1"
 
             $.get(url).done(function (datos) {
-                let titulo = datos.photo[i]  
-                let login = datos.login
-                let creado = datos.created_at
-                let ultimaact = datos.updated_at
+                let  = datos.photo[i]  
+                
 
                 $("#resultado").append("Nombre: " + login + "<br>");
-                $("#resultado").append("Creado el " + creado + "<br>");
-                $("#resultado").append("Ultima actualización el " + ultimaact + "<br>");
-                $("#resultado").append('<p>' + '<img src="' + imagen + '"></p>');
+               
             }).fail(function () {
                 $("#resultado").text("Error en el servidor o usuario no valido")
             })
