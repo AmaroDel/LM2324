@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refuerzo 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Buscador de peliculas</h1>
+    <input id="pelicula" type="text" placeholder="Introduce una pelicula"><br><br>
+    <button id="btn">Confirmar</button>
+    <p id="resultado"></p>
+</body>
+<script>
+    $(document).ready(function () {
+        $("#btn").click(function () {
+            // Guardians of the Galaxy Vol. 2
+            let peli = $("#pelicula").val()
+            let url = "http://www.omdbapi.com/?apikey=fe4f23bd&t=" + peli
+
+            $.get(url).done(function (datos) {
+                let imagen = datos.Poster
+                let titulo = datos.Title
+                $('#foto').append(
+                    '<p>' + '<img src="' + imagen + '"></p>'
+                );
+                $("#resultado").text("Informacion de " + pelicula)
+            }).fail(function () {
+                $("#resultado").text("Error en el servidor o ciudad no valida")
+            })
+        })
+    });
+
+</script>
+
+</html>
