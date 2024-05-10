@@ -31,9 +31,9 @@
                 let titulo = datos.Title
                 let estreno = datos.Released
 
-                $("#foto").append('<p>' + '<img src="' + imagen + '"></p>')
                 $("#resultado").append("Título de la película: " + titulo + "<br>");
                 $("#resultado").append("Estrenada el " + estreno + "<br>");
+                $("#resultado").append('<p>' + '<img src="' + imagen + '"></p>');
             }).fail(function () {
                 $("#resultado").text("Error en el servidor o película no valida")
             })
