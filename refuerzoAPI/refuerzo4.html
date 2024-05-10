@@ -21,7 +21,7 @@
             $("#resultado").empty()
 
             let usuario = $("#user").val()
-            let url = "https://api.github.com/users/" + usuario
+            let url = "https://api.github.com/users/" + usuario 
 
             $.get(url).done(function (datos) {
                 let imagen = datos.avatar_url   
