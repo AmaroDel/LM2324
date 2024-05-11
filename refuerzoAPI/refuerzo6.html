@@ -30,18 +30,18 @@
                 $("#resultado").empty()
 
                 for (var i = 0; i < datos.photos.photo.length; i++) {
-                    let farm = datos.photos.photo[i].farm
-                    let server = datos.photos.photo[i].server
-                    let id = datos.photos.photo[i].id
-                    let secret = datos.photos.photo[i].secret
-                    let foto = "https://live.staticflickr.com/" + server + "/" + id + "_" + secret + ".jpg"
+                    let farm = datos.photos.photo[i].farm;
+                    let server = datos.photos.photo[i].server;
+                    let id = datos.photos.photo[i].id;
+                    let secret = datos.photos.photo[i].secret;
+                    let foto = "https://live.staticflickr.com/" + server + "/" + id + "_" + secret + ".jpg";
                     $("#resultado").append('<p>' + '<img src="' + foto + '"></p>');
                 }
             }).fail(function () {
                 $("#resultado").text("Error en el servidor o usuario no valido")
-            })
+            });
 
-        })
+        });
     });
 
 </script>
