@@ -4,35 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refuerzo 5</title>
+    <title>Refuerzo 7</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <link rel="icon" href="#" type="image/x-icon">
+
 </head>
 
 <body>
-    <h1>Biblioteca</h1>
-    <label for="">Escribe un titulo de un libro</label>
+    <h1>Buscador de Gifs</h1>
+    <label for="">Escribe algo para buscar gifs sobre eso</label>
     <input id="texto" type="text"><br><br>
     <button id="btn">Confirmar</button>
     <p id="resultado"></p>
 
     <script>
+        //2Zwd8X4nCEqHB8KRogp1Y35guU2GnTyJ
 
         $(document).ready(function () {
             $("#btn").click(function () {
 
+
+
                 let texto = $("#texto").val()
-                let url = "https://www.googleapis.com/books/v1/volumes?q=intitle:" + texto + "&key=AIzaSyAp1nO7Aw2-9x8OohA7L886APCDyO5aMzM"
+
+                let url = "https://api.giphy.com/v1/gifs/search?api_key=2Zwd8X4nCEqHB8KRogp1Y35guU2GnTyJ&q=" + texto
                 $.get(url).done(function (datos) {
 
                     $("#resultado").empty()
 
-                    for (var i = 0; i < datos.items.length; i++) {
-                        let nombre = datos.items[i].volumeInfo.title;
-                        let foto = datos.items[i].volumeInfo.imageLinks.thumbnail;
+                    for (var i = 0; i < datos.data.length; i++) {
+                        let titulo = datos.data[i].title
+                        let imagen = datos.data[i].images.original.url
 
-                        $("#resultado").append("Titulo: " + nombre + "<br>");
-                        $("#resultado").append('<p> <img src=' + foto + '></p>');
+                        $("#resultado").append("Titulo: " + titulo + "<br>");
+                        $("#resultado").append('<p>' + '<img src="' + imagen + '"></p>');
                     }
                 }).fail(function () {
                     $("#resultado").text("Error en el servidor")
