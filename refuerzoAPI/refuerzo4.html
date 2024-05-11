@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refuerzo 4</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
+
 <body>
     <h1>Buscador de usuarios Github</h1>
     <label for="">Escribe el nombre de un usuario</label>
@@ -13,32 +15,34 @@
     <button id="btn">Confirmar</button>
     <p id="resultado"></p>
 
-</body>
-<script>
-    $(document).ready(function () {
-        $("#btn").click (function(){
 
-            $("#resultado").empty()
+    <script>
+        $(document).ready(function () {
+            $("#btn").click(function () {
 
-            let usuario = $("#user").val()
-            let url = "https://api.github.com/users/" + usuario 
+                $("#resultado").empty()
 
-            $.get(url).done(function (datos) {
-                let imagen = datos.avatar_url   
-                let login = datos.login
-                let creado = datos.created_at
-                let ultimaact = datos.updated_at
+                let usuario = $("#user").val()
+                let url = "https://api.github.com/users/" + usuario
 
-                $("#resultado").append("Nombre: " + login + "<br>");
-                $("#resultado").append("Creado el " + creado + "<br>");
-                $("#resultado").append("Ultima actualización el " + ultimaact + "<br>");
-                $("#resultado").append('<p>' + '<img src="' + imagen + '"></p>');
-            }).fail(function () {
-                $("#resultado").text("Error en el servidor o usuario no valido")
+                $.get(url).done(function (datos) {
+                    let imagen = datos.avatar_url
+                    let login = datos.login
+                    let creado = datos.created_at
+                    let ultimaact = datos.updated_at
+
+                    $("#resultado").append("Nombre: " + login + "<br>");
+                    $("#resultado").append("Creado el " + creado + "<br>");
+                    $("#resultado").append("Ultima actualización el " + ultimaact + "<br>");
+                    $("#resultado").append('<p>' + '<img src="' + imagen + '"></p>');
+                }).fail(function () {
+                    $("#resultado").text("Error en el servidor o usuario no valido")
+                })
+
             })
+        });
 
-        })
-    });
+    </script>
+</body>
 
-</script>
 </html>

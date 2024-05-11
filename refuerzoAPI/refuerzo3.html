@@ -16,28 +16,30 @@
     <p id="resultado"></p>
     <p id="foto"></p>
 
-</body>
-<script>
-    //Guardians of the Galaxy Vol. 2
-    $(document).ready(function () {
-        $("#btn").click(function () {
-            $("#resultado").empty()
-            let peli = $("#pelicula").val()
-            let url = "http://www.omdbapi.com/?apikey=fe4f23bd&t=" + peli
 
-            $.get(url).done(function (datos) {
-                let imagen = datos.Poster
-                let titulo = datos.Title
-                let estreno = datos.Released
+    <script>
+        //Guardians of the Galaxy Vol. 2
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                $("#resultado").empty()
+                let peli = $("#pelicula").val()
+                let url = "http://www.omdbapi.com/?apikey=fe4f23bd&t=" + peli
 
-                $("#resultado").append("Título de la película: " + titulo + "<br>");
-                $("#resultado").append("Estrenada el " + estreno + "<br>");
-                $("#resultado").append('<p>' + '<img src="' + imagen + '"></p>');
-            }).fail(function () {
-                $("#resultado").text("Error en el servidor o película no valida")
+                $.get(url).done(function (datos) {
+                    let imagen = datos.Poster
+                    let titulo = datos.Title
+                    let estreno = datos.Released
+
+                    $("#resultado").append("Título de la película: " + titulo + "<br>");
+                    $("#resultado").append("Estrenada el " + estreno + "<br>");
+                    $("#resultado").append('<p>' + '<img src="' + imagen + '"></p>');
+                }).fail(function () {
+                    $("#resultado").text("Error en el servidor o película no valida")
+                })
             })
-        })
-    });
+        });
 
-</script>
+    </script>
+</body>
+
 </html>

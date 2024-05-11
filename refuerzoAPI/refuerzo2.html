@@ -13,25 +13,27 @@
     <button id="btn">Confirmar</button>
     <p id="resultados"></p>
 
+
+    <script>
+        let url = "https://api.unsplash.com/photos/random?client_id=WsFoNE7GVT3cpqsqho8UtUaguVmXINGl3rVcxlt2Q4g"
+
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                $('#resultados').empty()
+                $.get(url).done(function (datos) {
+                    let imagen = datos.urls.small
+                    $('#resultados').append(
+                        '<p>' + '<img src="' + imagen + '"></p>'
+                    );
+                })
+            })
+        });
+
+
+
+    </script>
 </body>
 
-<script>
-    let url = "https://api.unsplash.com/photos/random?client_id=WsFoNE7GVT3cpqsqho8UtUaguVmXINGl3rVcxlt2Q4g"
 
-    $(document).ready(function () {
-        $("#btn").click(function () {
-            $('#resultados').empty()
-            $.get(url).done(function (datos) {
-                let imagen = datos.urls.small
-                $('#resultados').append(
-                    '<p>' + '<img src="' + imagen + '"></p>'
-                );
-            })
-        })
-    });
-
-
-
-</script>
 
 </html>
