@@ -6,9 +6,42 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Biblioteca</h1>
+    <label for="">Escribe un titulo de un libro</label>
+    <input id="titulo" type="text"><br><br>
+    <button id="btn">Confirmar</button>
+    <p id="resultado"></p>
+
     <script>
+
         // AIzaSyAp1nO7Aw2-9x8OohA7L886APCDyO5aMzM
+        $(document).ready(function () {
+        $("#btn").click(function () {
+
+            
+
+            let texto = $("#titulo").val()
+
+            let url = "https://www.googleapis.com/books/v1/volumes?q=intitle:"+ texto + "&key=AIzaSyAp1nO7Aw2-9x8OohA7L886APCDyO5aMzM"
+            $.get(url).done(function (datos) {
+                
+                $("#resultado").empty()
+
+                for (var i = 0; i < datos.items.length; i++) {
+                    let nombre = datos.items[i].volumeInfo.title;
+                    let server = datos.photos.photo[i].server;
+                    let id = datos.photos.photo[i].id;
+                    let secret = datos.photos.photo[i].secret;
+                    let foto = "https://live.staticflickr.com/" + server + "/" + id + "_" + secret + ".jpg";
+                    
+                    $("#resultado").append('<p>' + '<img src="' + foto + '"></p>');
+                }
+            }).fail(function () {
+                $("#resultado").text("Error en el servidor o usuario no valido")
+            });
+
+        });
+    });
     </script>
 </body>
 </html>
