@@ -144,7 +144,7 @@
                     let a2 = apellido2.substr(0, 3);
                     let d = dni.substr(-3); // Tomar los últimos 3 dígitos del DNI
                     let usuario = (n + a1 + a2 + d).toLowerCase(); // Convertir a minúsculas
-                    usuario = usuario.replace(/\s+/g, ''); // Eliminar espacios en blanco
+                    // Eliminar espacios en blanco, usar .trim
                     $("#usuario").text(usuario);
                 }
 
