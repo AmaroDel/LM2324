@@ -138,7 +138,8 @@
 
             $("#reserva").click(function () {
                 event.preventDefault();
-                $("#diaReserva").empty();     
+                $("#diaReserva").empty();
+                $("#totalPrecio").empty();
                 if ($("#fecha").val() == '') {
                     $("#diaReserva").text("Elige un día");                
                 }else {
