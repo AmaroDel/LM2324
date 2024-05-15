@@ -135,14 +135,17 @@
                 event.preventDefault();
                 $("#diaReserva").empty();
                 $("#totalPrecio").empty();
+
                 if ($("#fecha").val() == '') {
-                    $("#diaReserva").text("Elige un día");                
-                }else {
+                    $("#diaReserva").text("Elige un día");
+                } else {
+
+                    let hora = $("#hora").val()
+                    let dia = $("#fecha").val()
+                    let pista = $("#pista").val()
                     let PrecFinal = 0;
                     let PrecLuz = 0;
                     $("#totalPrecio").empty();
-
-
 
                     var opciones = $("#hora").val();
                     switch (opciones) {
@@ -201,7 +204,7 @@
                     }
 
 
-
+                    $("#diaReserva").append("Has reservado el día: " + dia + " en la pista "+ pista);
                     $("#totalPrecio").append(PrecFinal + PrecLuz + " €");
                 }
 
