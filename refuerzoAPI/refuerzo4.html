@@ -26,6 +26,7 @@
                 let url = "https://api.github.com/users/" + usuario
 
                 $.get(url).done(function (datos) {
+                    console.log(datos)
                     let imagen = datos.avatar_url
                     let login = datos.login
                     let creado = datos.created_at

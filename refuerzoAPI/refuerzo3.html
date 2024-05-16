@@ -26,6 +26,7 @@
                 let url = "http://www.omdbapi.com/?apikey=fe4f23bd&t=" + peli
 
                 $.get(url).done(function (datos) {
+                    console.log(datos)
                     let imagen = datos.Poster
                     let titulo = datos.Title
                     let estreno = datos.Released
