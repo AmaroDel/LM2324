@@ -85,14 +85,14 @@
 
                     for (var i = 0; i < datos.results.length; i++){
                         let titulo = datos.results[i].title
-                        let autor = datos.results[i].authors[i]
-                        let imagen = datos.results[i].formats.image/jpeg
-                        let enlace = datos.results[i].formats.text/html
-                        let descargas = datos.results[i].formats.download_count
+                        let autor = datos.results[i].authors.length == 0 ? "Anónimo" : datos.results[i].authors[0].name;
+                        let imagen = datos.results[i].formats["image/jpeg"]
+                        let enlace = datos.results[i].formats["text/html"]
+                        let descargas = datos.results[i].download_count
 
                     $("#resultados").append("Título del libro: " + titulo + "<br>");
                     $("#resultados").append("Autor: " + autor + "<br>");
-                    $("#resultado").append('<p>' + '<img src="' + imagen + '"></p>');
+                    $("#resultados").append('<p> <img src=' + imagen + '></p>');
                     $("#resultados").append("Enlace: " + enlace + "<br>");
                     $("#resultados").append("Descargas: " + descargas + "<br>");
                     }
@@ -100,36 +100,36 @@
                 })
             })
 
+            $("#btn-libro").click(function (){
+                let id = $("#codLibro").val() 
+                let url2 = "https://gutendex.com/books?ids=" + id
+
+
+                $.get(url2).done(function (datos){
+                    console.log(datos)
+
+                    $("#resultados").empty()
+
+                        let titulo = datos.results[0].title
+                        let autor = datos.results[0].authors.length == 0 ? "Anónimo" : datos.results[0].authors[0].name;
+                        let imagen = datos.results[0].formats["image/jpeg"]
+                        let enlace = datos.results[0].formats["text/html"]
+                        let descargas = datos.results[0].download_count
+
+                    $("#resultados").append("Título del libro: " + titulo + "<br>");
+                    $("#resultados").append("Autor: " + autor + "<br>");
+                    $("#resultados").append('<p> <img src=' + imagen + '></p>');
+                    $("#resultados").append("Enlace: " + enlace + "<br>");
+                    $("#resultados").append("Descargas: " + descargas + "<br>");
+                    
+
+                })
+            })
+
         });
 
 
-         /*$(document).ready(function () {
-            $("#btn").click(function () {
-
-
-
-                let texto = $("#texto").val()
-
-                let url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=5c07181b8068ed4eca237be5fe1cd3fc&text=" + texto + "&format=json&nojsoncallback=1"
-                $.get(url).done(function (datos) {
-                    console.log(datos)
-
-                    $("#resultado").empty()
-
-                    for (var i = 0; i < datos.photos.photo.length; i++) {
-                        let farm = datos.photos.photo[i].farm;
-                        let server = datos.photos.photo[i].server;
-                        let id = datos.photos.photo[i].id;
-                        let secret = datos.photos.photo[i].secret;
-                        let foto = "https://live.staticflickr.com/" + server + "/" + id + "_" + secret + ".jpg";
-                        $("#resultado").append('<p>' + '<img src="' + foto + '"></p>');
-                    }
-                }).fail(function () {
-                    $("#resultado").text("Error en el servidor")
-                });
-
-            });
-        }); */
+        
         /* Aqui desarrollamos el código necesario */
     </script>
 </body>
