@@ -81,10 +81,20 @@
                 $.get(url).done(function (datos){
                     console.log(datos)
 
-                    $("#resultado").empty()
+                    $("#resultados").empty()
 
-                    for (var i = 0; i < count.results.length; i++){
-                        
+                    for (var i = 0; i < datos.results.length; i++){
+                        let titulo = datos.results[i].title
+                        let autor = datos.results[i].authors[i]
+                        let imagen = datos.results[i].formats.image/jpeg
+                        let enlace = datos.results[i].formats.text/html
+                        let descargas = datos.results[i].formats.download_count
+
+                    $("#resultados").append("Título del libro: " + titulo + "<br>");
+                    $("#resultados").append("Autor: " + autor + "<br>");
+                    $("#resultado").append('<p>' + '<img src="' + imagen + '"></p>');
+                    $("#resultados").append("Enlace: " + enlace + "<br>");
+                    $("#resultados").append("Descargas: " + descargas + "<br>");
                     }
 
                 })
