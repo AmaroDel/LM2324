@@ -24,6 +24,7 @@
                 let texto = $("#texto").val()
                 let url = "https://www.googleapis.com/books/v1/volumes?q=intitle:" + texto + "&key=AIzaSyAp1nO7Aw2-9x8OohA7L886APCDyO5aMzM"
                 $.get(url).done(function (datos) {
+                    console.log(datos)
 
                     $("#resultado").empty()
 

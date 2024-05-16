@@ -25,6 +25,7 @@
 
                 let url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=5c07181b8068ed4eca237be5fe1cd3fc&text=" + texto + "&format=json&nojsoncallback=1"
                 $.get(url).done(function (datos) {
+                    console.log(datos)
 
                     $("#resultado").empty()
 
