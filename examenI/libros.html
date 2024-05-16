@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alexandria">
     <title>Visualizador libros</title>
     <!-- Aquí añadimos el código para poder trabajar con jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: 'Alexandria', sans-serif;
@@ -70,6 +72,54 @@
         </div>
     </div>
     <script>
+
+        $(document).ready(function () {
+            $("#btn-todos").click(function (){
+                let url = "https://gutendex.com/books/"
+
+
+                $.get(url).done(function (datos){
+                    console.log(datos)
+
+                    $("#resultado").empty()
+
+                    for (var i = 0; i < count.results.length; i++){
+                        
+                    }
+
+                })
+            })
+
+        });
+
+
+         /*$(document).ready(function () {
+            $("#btn").click(function () {
+
+
+
+                let texto = $("#texto").val()
+
+                let url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=5c07181b8068ed4eca237be5fe1cd3fc&text=" + texto + "&format=json&nojsoncallback=1"
+                $.get(url).done(function (datos) {
+                    console.log(datos)
+
+                    $("#resultado").empty()
+
+                    for (var i = 0; i < datos.photos.photo.length; i++) {
+                        let farm = datos.photos.photo[i].farm;
+                        let server = datos.photos.photo[i].server;
+                        let id = datos.photos.photo[i].id;
+                        let secret = datos.photos.photo[i].secret;
+                        let foto = "https://live.staticflickr.com/" + server + "/" + id + "_" + secret + ".jpg";
+                        $("#resultado").append('<p>' + '<img src="' + foto + '"></p>');
+                    }
+                }).fail(function () {
+                    $("#resultado").text("Error en el servidor")
+                });
+
+            });
+        }); */
         /* Aqui desarrollamos el código necesario */
     </script>
 </body>
