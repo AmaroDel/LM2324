@@ -1,11 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="icon" href="#" type="image/x-icon">
+    <style>
+        .bueno {
+            background-color: green;
+        }
+
+        .aceptable {
+            background-color: yellow;
+        }
+
+        .moderado {
+            background-color: orange;
+        }
+
+        .malo {
+            background-color: purple;
+        }
+
+        .muymalo {
+            background-color: red;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h1>Air Pollution API</h1>
+    <label for="">Introduce la latitud:</label><br><br>
+    <input id="latitud" type="text"><br><br>
+    <label for="">Introduce la longitud:</label><br><br>
+    <input id="longitud" type="text"><br><br>
+    <button id="btn">Enviar</button>
+    <div id="caja">
+        <p id="resultado"></p>
+    </div>
+
+
+
+
+    <script>
+        //
+        $(document).ready(function () {
+
+            $("#btn").click(function () {
+
+                $("#resultado").empty()
+
+                if ($("#latitud").val == "") {
+                    $("#resultado").text("Por favor rellene los dos campos")
+                } else if ($("#longitud").val == "") {
+                    $("#resultado").text("Por favor rellene los dos campos")
+                }
+
+                //lat sevilla: 37.38283
+                //lon sevilla: -5.97317
+                //lat NY: 40.71427
+                //lon NY: -74.00597
+                let lat = $("#latitud").val()
+                let lon = $("#longitud").val()
+                let api = "3dc30cc521609feee6a2662805e1c862"
+                let url = "http://api.openweathermap.org/data/2.5/air_pollution?lat=" + lat + "&lon=" + lon + "&appid=" + api
+
+                $.get(url).done(function (datos) {
+                    console.log(datos)
+
+                    for (var i = 0; i < datos.list.length; i++) {
+                        let aqi = datos.list[i].main.aqi
+                        let co = datos.list[i].components.co
+                        let so2 = datos.list[i].components.so2
+                        let pm = datos.list[i].components.pm2_5
+
+                        switch (aqi) {
+
+                            case aqi = 1:
+
+                                aqi = "Bueno"
+                                $("#caja").toggleClass("bueno");
+                                break;
+
+                            case aqi = 2:
+
+                                aqi = "Aceptable"
+                                $("#caja").toggleClass("aceptable");
+                                break;
+                            case aqi = 3:
+
+                                aqi = "Moderado"
+                                $("#caja").toggleClass("moderado");
+                                break;
+                            case aqi = 4:
+
+                                aqi = "Malo"
+                                $("#caja").toggleClass("malo");
+                                break;
+                            case aqi = 5:
+
+                                aqi = "Muy malo"
+                                $("#caja").toggleClass("muymalo");
+                                break;
+                        }
+
+                        $("#resultado").append("<b>Calidad del aire: </b>" + aqi + "<br>");
+                        $("#resultado").append("<b>Cantidad monóxido de carbono (CO): </b>" + co + "µg/m<sup>3</sup> <br>");
+                        $("#resultado").append("<b>Cantidad dióxido de azufre (SO<sub>2</sub>): </b>" + so2 + "µg/m<sup>3</sup> <br>");
+                        $("#resultado").append("<b>Cantidad partículas finas (PM<sub>2.5</sub>): </b>" + pm + "µg/m<sup>3</sup> <br>");
+                    }
+                }).fail(function () {
+                    $("#resultado").text("Error de ajax")
+                })
+
+            })
+
+        });
+    </script>
 </body>
+
 </html>

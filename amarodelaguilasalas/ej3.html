@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
     <title>Fake Store API</title>
+    <link rel="icon" href="#" type="image/x-icon">
     <style>
         body {
             font-family: 'Alexandria', sans-serif;
@@ -86,16 +87,11 @@
         $(document).ready(function () {
 
             $(function () {
-                let auto = [
-                    "electronics",
-                    "jewelery",
-                    "men's clothing",
-                    "women's clothing"
-                ];
+
                 $("#categoria").autocomplete({
-                    source: auto,
-                    minLength: 2
-                });;
+                    minLength: 2,
+                    source: "https://fakestoreapi.com/products/categories"
+                });
             });
 
             $("#btn-todos").click(function () {
@@ -105,7 +101,7 @@
                     $("#resultados").empty()
                     for (var i = 0; i < datos.length; i++) {
                         $("#resultados").append('<img width="200px" height="200px" src="' + datos[i].image + '">')
-                        $("#resultados").append("<p>Titulo: " + datos[i].title + "</p>")
+                        $("#resultados").append("<p>Título: " + datos[i].title + "</p>")
                         $("#resultados").append("<p>Categoría: " + datos[i].category + "</p>")
                         $("#resultados").append("<p>Puntuación: " + datos[i].rating.rate + "</p>")
                         $("#resultados").append("<p>Descripción: " + datos[i].description + "</p>")
