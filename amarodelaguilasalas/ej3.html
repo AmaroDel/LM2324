@@ -108,7 +108,7 @@
                         $("#resultados").append("<p>Precio: " + datos[i].price + "€" + "</p>")
                     }
                 }).fail(function () {
-                    $("#resultados").text("Error cargando datos del servidor")
+                    alert("Error cargando datos del servidor")
                 })
             })
         });

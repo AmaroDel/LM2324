@@ -52,9 +52,11 @@
 
                 $("#resultado").empty()
 
-                if ($("#latitud").val == "") {
+                let prueba = $("#latitud").val()
+
+                if ($("#latitud").val().length = 0) {
                     $("#resultado").text("Por favor rellene los dos campos")
-                } else if ($("#longitud").val == "") {
+                } else if ($("#longitud").val().length = 0) {
                     $("#resultado").text("Por favor rellene los dos campos")
                 }
 
@@ -70,12 +72,11 @@
                 $.get(url).done(function (datos) {
                     console.log(datos)
 
-                    for (var i = 0; i < datos.list.length; i++) {
-                        let aqi = datos.list[i].main.aqi
-                        let co = datos.list[i].components.co
-                        let so2 = datos.list[i].components.so2
-                        let pm = datos.list[i].components.pm2_5
-
+                        let aqi = datos.list[0].main.aqi
+                        let co = datos.list[0].components.co
+                        let so2 = datos.list[0].components.so2
+                        let pm = datos.list[0].components.pm2_5
+                    
                         switch (aqi) {
 
                             case aqi = 1:
@@ -110,7 +111,7 @@
                         $("#resultado").append("<b>Cantidad monóxido de carbono (CO): </b>" + co + "µg/m<sup>3</sup> <br>");
                         $("#resultado").append("<b>Cantidad dióxido de azufre (SO<sub>2</sub>): </b>" + so2 + "µg/m<sup>3</sup> <br>");
                         $("#resultado").append("<b>Cantidad partículas finas (PM<sub>2.5</sub>): </b>" + pm + "µg/m<sup>3</sup> <br>");
-                    }
+                    
                 }).fail(function () {
                     $("#resultado").text("Error de ajax")
                 })
